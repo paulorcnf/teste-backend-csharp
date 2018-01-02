@@ -5,11 +5,13 @@ namespace Application.TorreHanoi.Validation
 {
     internal static class ObterProcessoPorValidation
     {
+        private static Guid guid;
+
         internal static ObterProcessoPorResponse ValidationProcesso(this string id)
         {
             var response = new ObterProcessoPorResponse();
 
-            if (Guid.TryParse(id, out var _))
+            if (Guid.TryParse(id, out guid))
             {
                 return response;
             }

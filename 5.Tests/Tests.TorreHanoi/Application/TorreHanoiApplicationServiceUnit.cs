@@ -79,7 +79,16 @@ namespace Tests.TorreHanoi.Application
         [TestCategory(CategoriaTeste)]
         public void ObterImagemProcessoPor_Deve_Retornar_Imagem()
         {
-            Assert.Fail();
+            var processo = _service.AdicionarNovoPorcesso(2);
+
+            Assert.IsNotNull(processo);
+            Assert.IsNotNull(processo.IdProcesso);
+
+            var imagem = _service.ObterImagemProcessoPor(processo.IdProcesso.ToString());
+
+            Assert.IsNotNull(imagem);
+            Assert.IsTrue(imagem.IsValid);
+            Assert.AreEqual(imagem.StatusCode, HttpStatusCode.OK);
         }
     }
 }

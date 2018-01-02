@@ -24,10 +24,11 @@ namespace Infrastructure.TorreHanoi.Log
         private static ICollection<TipoLog> AdicionarLogsDisponiveis(IEnumerable<string> tiposLogs)
         {
             var logsDisponiveis = new List<TipoLog>();
+            TipoLog logDisponivel = new TipoLog();
 
             foreach (var tipoLog in tiposLogs)
             {
-                if(Enum.TryParse(tipoLog, true, out TipoLog logDisponivel))
+                if(Enum.TryParse(tipoLog, true, out logDisponivel))
                 {
                     logsDisponiveis.Add(logDisponivel);
                 }

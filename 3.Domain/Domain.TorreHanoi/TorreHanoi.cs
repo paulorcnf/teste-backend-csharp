@@ -59,6 +59,7 @@ namespace Domain.TorreHanoi
         {
             if (numeroDiscosRestante <= 1)
             {
+                MoverDisco(origem, destino);
                 return;
             }
 
